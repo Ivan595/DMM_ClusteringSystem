@@ -43,6 +43,9 @@ DMM_ClusteringSystem/
 │   ├── test_som.py                   # Тест SOM
 │   ├── test_clique.py               # Тест CLIQUE
 │   ├── test_clarans.py              # Тест CLARANS
+│   ├── test_denclue.py               # Тест DENCLUE
+│   ├── test_fcm_pyc.py               # Тест FCM (PyClustering)
+│   ├── test_denclue_fcm_regression.py # Регрессионные тесты DENCLUE и FCM
 │   ├── test_template.py              # Шаблон для новых тестов
 │   │
 │   └── Images/                       # Директория для результатов
@@ -89,7 +92,19 @@ cd <path_to_your_project>\DMM_ClusteringSystem
 
 # Запустите тест WaveClustering
 python TestMethods/test_wave.py
+
+# Тест DENCLUE
+python TestMethods/test_denclue.py --no-show
+
+# Тест FCM (PyClustering)
+python TestMethods/test_fcm_pyc.py --no-show
+
+# Регрессионные тесты DENCLUE и FCM
+python -m unittest TestMethods.test_denclue_fcm_regression -v
 ```
+
+Для `test_denclue.py` и `test_fcm_pyc.py` флаг `--no-show` отключает показ окон.
+Пять стандартных PNG сохраняются в `Images/DENCLUE/` и `Images/FCM_PyClustering/`.
 
 ### Шаг 2: Просмотр Результатов
 
