@@ -33,7 +33,7 @@ from ClusteringMethods.ClasteringAlgorithms import (
 
 
 class DenStreamClustering:
-    def __init__(self, epsilon: float, beta: float, mu: int, lambd: float, offline_option: float):
+    def __init__(self, epsilon: float = 0.8, beta: float = 0.75, mu: int = 8, lambd: float = 0.001, offline_option: float = 1.7):
         self.epsilon = epsilon
         self.beta = beta
         self.mu = mu
@@ -119,7 +119,7 @@ def _prepare_features(data: np.ndarray) -> np.ndarray:
 @StrategiesManager.registerStrategy(
     "denstream",
     "DENSTREAM",
-    "Density-Based Clustering over an Evolving Data Stream with Noise (river)"
+    "Density-Based Clustering over an Evolving Data Stream with Noise (pyDenStream)"
 )
 class ConcreteStrategyDENSTREAM(Strategy):
     """Метод кластеризации с использованием DENSTREAM из pyDenStream
